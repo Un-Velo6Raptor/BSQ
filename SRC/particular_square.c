@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Thu Dec  8 09:58:43 2016 
-** Last update Thu Dec  8 10:05:58 2016 
+** Last update Thu Dec  8 10:10:48 2016 
 */
 
 #include	<unistd.h>
@@ -23,7 +23,10 @@ int	particular_map_2(char **tab, int nb_ligne, int lenght)
       idx++;
     }
   if (tab[idx] != NULL)
-    my_putstr("x");
+    {
+      my_putstr("x");
+      idx++;
+    }
   while (tab[idx] != NULL)
     {
       write(1, "\n", 1);
@@ -51,7 +54,10 @@ int	particular_map(char **tab, int nb_ligne, int lenght)
           idx++;
 	}
       if (tab[0][idx] != '\0')
-        my_putstr("x");
+	{
+	  my_putstr("x");
+	  idx++;
+	}
       my_putstr(&tab[0][idx]);
       write(1, "\n", 1);
     }
