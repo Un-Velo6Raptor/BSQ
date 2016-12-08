@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 13:09:22 2016 
-** Last update Wed Dec  7 23:01:21 2016 
+** Last update Wed Dec  7 23:29:27 2016 
 */
 
 #include	<stdio.h>
@@ -38,55 +38,10 @@ int	we_are_the_saviors(t_coo *coor)
       coor->y_min = coor->y_tmp;
       coor->x_max = coor->x_tmp + coor->nb_check;
       coor->y_max = coor->y_tmp + coor->nb_check;
-            printf("(%d, %d)\n(%d, %d)\n~~~~~~~~~~~~~~\n",
-      	     coor->x_min, coor->y_min, coor->x_max, coor->y_max);
       return (-1);
     }
   return (-1);
 }
-/*
-int	found_check_max(t_coo *coor, int **obs, int idx_y)
-{
-  int	idx;
-
-  idx = 0;
-  while (coor->x_tmp >= obs[idx_y][idx] && obs[idx_y][idx] != -1)
-    idx++;
-  printf("start: (%d, %d)\n", coor->x_tmp, coor->y_tmp);
-  printf("ligne: %d\n", idx_y);
-  printf("obs[idx_y][%d]: %d\n", idx, obs[idx_y][idx]);
-  if (idx == 0 && obs[idx_y][idx] == -1)
-    return (coor->lenght - coor->x_tmp);
-  if (idx == 0 && coor->x_tmp != 0)
-    return (obs[idx_y][idx] - coor->x_tmp - 1);
-  if (idx == 0)
-    return (obs[idx_y][idx] - 1);
-  if (obs[idx_y][idx] == -1)
-    return (coor->lenght - coor->x_tmp);
-  else
-    return (obs[idx_y][idx] - coor->x_tmp);
-}
-
-int	check_square(t_coo *coor, int **obs)
-{
-  int	idx_y;
-  int	tmp;
-  
-  idx_y = coor->y_tmp;
-  tmp = 0;
-  while (idx_y < coor->nb_ligne && idx_y - coor->y_tmp < coor->nb_check)
-    {
-      tmp = found_check_max(coor, obs, idx_y);
-      printf("valeur de tmp:%d && nb_check : %d\n---------------\n", tmp, coor->nb_check);
-      if (tmp < coor->nb_check)
-	return (1);
-      idx_y++;
-    }
-  if (idx_y - coor->y_tmp == coor->nb_check)
-    we_are_the_saviors(coor);
-  return (-1);
-  }
-*/
 
 int	found_check_max(t_coo *coor, int **obs, int idx_y)
 {
@@ -95,9 +50,6 @@ int	found_check_max(t_coo *coor, int **obs, int idx_y)
   idx = 0;
   while (coor->x_tmp > obs[idx_y][idx] && obs[idx_y][idx] != -1)
     idx++;
-  /*    printf("start: (%d, %d)\n", coor->x_tmp, coor->y_tmp);
-  printf("ligne: %d\n", idx_y);
-  printf("obs[idx_y][%d]: %d\n", idx, obs[idx_y][idx]);*/
   coor->tmp_val = obs[idx_y][idx];
   if (idx == 0 && obs[idx_y][idx] == -1)
     return (-1);
@@ -116,9 +68,7 @@ int	check_square(t_coo *coor, int **obs)
   tmp = 0;
   while (idx_y < coor->nb_ligne && idx_y <= coor->nb_check + coor->y_tmp)
     {
-      //                  usleep(100000);
       tmp = found_check_max(coor, obs, idx_y);
-      //      printf("valeur de tmp:%d && nb_check : %d\n---------------\n", tmp, coor->nb_check);
       if ((tmp >= coor->x_tmp && tmp <= coor->x_tmp + coor->nb_check) ||
 	  (coor->tmp_val >= coor->x_tmp && coor->tmp_val <= coor->x_tmp + coor->nb_check))
 	return (1);
@@ -198,8 +148,6 @@ int	bsq(char **tab, int **obs, int nb_ligne, int lenght)
 	prepare_start(coor, obs);
       coor->y += 1;
     }
-  //  printf("-----------------------------\nresult :\n(%d, %d)\n(%d, %d)\n",
-  //	 coor->x_min, coor->y_min, coor->x_max, coor->y_max);
   disp_tab(tab, coor);
   return (84);
 }
