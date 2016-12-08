@@ -5,13 +5,14 @@
 ## Login   <januar_m@epitech.net>
 ## 
 ## Started on  Fri Oct 14 09:55:01 2016 Martin Januario
-## Last update Tue Dec  6 13:30:33 2016 
+## Last update Thu Dec  8 10:04:51 2016 
 ##
 
 SRC	=	SRC/main.c		\
 		SRC/my_strcat.c		\
 		SRC/my_strdup.c		\
 		SRC/my_getnbr.c		\
+		SRC/particular_square.c	\
 		SRC/make_obs.c		\
 		SRC/my_strcpy.c		\
 		SRC/my_strncpy.c	\

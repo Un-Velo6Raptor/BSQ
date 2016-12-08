@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Sun Dec  4 10:35:12 2016 
-** Last update Tue Dec  6 13:34:10 2016 
+** Last update Thu Dec  8 09:59:50 2016 
 */
 
 #include	<sys/types.h>
@@ -84,6 +84,8 @@ int	main(int argc, char **argv)
     return (84);
   if (make_tab(&tab, &nb_ligne, str, &lenght) == 84)
     return (84);
+  if (lenght == 1 || nb_ligne == 1)
+    return (particular_map(tab, nb_ligne, lenght));
   if (make_obs(&obs, tab, nb_ligne, lenght) == 84)
     return (84);
   bsq(tab, obs, nb_ligne, lenght);
