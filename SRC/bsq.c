@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 13:09:22 2016 
-** Last update Wed Dec  7 23:29:27 2016 
+** Last update Thu Dec  8 10:45:16 2016 
 */
 
 #include	<stdio.h>
@@ -87,12 +87,12 @@ int	start_boucle(t_coo *coor, int **obs)
   int	idx;
 
   idx_x = coor->x_tmp;
-  check = 0;
   save = coor->nb_check;
   idx = 0;
   while (coor->x_max - coor->x_min < coor->nb_check) 
     {
-      while (coor->nb_check != 0)
+      check = 0;
+      while (coor->nb_check != 0 && check != -1)
 	{
 	  check = check_square(coor, obs);
 	  coor->nb_check--;
@@ -133,7 +133,7 @@ int	bsq(char **tab, int **obs, int nb_ligne, int lenght)
   if ((coor = malloc(sizeof(t_coo) * 1)) == NULL)
     return (84);
   ini_coor(coor, lenght, nb_ligne);
-  while (coor->y < nb_ligne)
+  while (coor->y < nb_ligne && coor->y_max - coor->y_min + coor->y < nb_ligne)
     {
       coor->x = 0;
       if (obs[coor->y][coor->x] != -1)
