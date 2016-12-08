@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Sun Dec  4 10:35:12 2016 
-** Last update Thu Dec  8 09:59:50 2016 
+** Last update Thu Dec  8 11:49:17 2016 
 */
 
 #include	<sys/types.h>
@@ -18,12 +18,13 @@
 char	*my_realloc(char *res, char *buffer, int idx, int size)
 {
   char	*new_str;
-  
+
   if (idx == 0)
     res = my_strdup(buffer);
   else
     {
-      if ((new_str = malloc(sizeof(char) * (my_strlen(res) + size + 1))) == NULL)
+      if ((new_str = malloc(sizeof(char) *
+			    (my_strlen(res) + size + 1))) == NULL)
 	return (NULL);
       my_strcpy(new_str, res);
       my_strcat(new_str, buffer);

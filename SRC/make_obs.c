@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 10:54:35 2016 
-** Last update Wed Dec  7 23:10:00 2016 
+** Last update Thu Dec  8 11:49:41 2016 
 */
 
 #include	<stdlib.h>
@@ -25,7 +25,7 @@ void	make_obs_ligne(int ***obs, char **tab, int idx, int lenght)
 
   good = 0;
   idx_lenght = 0;
-  while(tab[idx][idx_lenght] != '\0')
+  while (tab[idx][idx_lenght] != '\0')
     {
       if (tab[idx][idx_lenght] == 'o')
 	{

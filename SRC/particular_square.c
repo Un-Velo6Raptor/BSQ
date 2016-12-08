@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Thu Dec  8 09:58:43 2016 
-** Last update Thu Dec  8 10:17:37 2016 
+** Last update Thu Dec  8 11:57:10 2016 
 */
 
 #include	<unistd.h>
@@ -51,9 +51,9 @@ int	particular_map(char **tab, int nb_ligne, int lenght)
   if (nb_ligne == 1 && lenght != 1)
     {
       while (tab[0][idx] != '\0' && tab[0][idx] == 'o')
-        {
-          write(1, &tab[0][idx], 1);
-          idx++;
+	{
+	  write(1, &tab[0][idx], 1);
+	  idx++;
 	}
       if (tab[0][idx] != '\0')
 	{
