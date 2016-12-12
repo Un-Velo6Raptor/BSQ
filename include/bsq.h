@@ -5,7 +5,7 @@
 ** Login   <martin.januario@epitech.eu>
 ** 
 ** Started on  Mon Dec  5 16:51:44 2016 
-** Last update Wed Dec  7 21:42:38 2016 
+** Last update Mon Dec 12 13:10:09 2016 
 */
 
 #ifndef BSQ_H_
@@ -24,7 +24,6 @@ typedef struct s_coo
   int	y_min;
   int	x_max;
   int	y_max;
-
   int	tmp_val;
 } t_coo;
 
